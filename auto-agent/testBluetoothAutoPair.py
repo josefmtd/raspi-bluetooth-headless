@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import BtAutoPair
+import bluetoothAutoPair
 
-autopair = BtAutoPair.BtAutoPair()
+autopair = bluetoothAutoPair.BtAutoPair()
 
 autopair.enable_pairing()
