@@ -1,0 +1,29 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:				bluetoothautopair
+# Required-Start:		bluetooth
+# Required-Stop:		bluetooth
+# Default-Start:		2 3 4 5
+# Default-Stop:			0 1 6
+# Short-Description:	Bluetooth Autopair Agent
+# Description:			This daemon starts bluetooth autopair agent
+### END INIT INFO
+
+case $1 in
+	start)
+		/usr/local/bin/startBluetoothAutoPair.py
+		;;
+	stop)
+		/usr/local/bin/stopBluetoothAutoPair.py
+		;;
+	restart)
+		$0 stop && sleep 2 && $0 start
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart}"
+		exit 2
+		;;
+esac
+
+exit 0
